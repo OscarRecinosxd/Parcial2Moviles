@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.oscarrecinos.parcial2.UI.Inicio.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" />
+    <fragment
+        android:id="@+id/examenFragment"
+        android:name="com.oscarrecinos.parcial2.UI.Examen.ExamenFragment"
+        android:label="fragment_examen"
+        tools:layout="@layout/fragment_examen" />
+    <fragment
+        android:id="@+id/agregarPreguntaFragment"
+        android:name="com.oscarrecinos.parcial2.UI.AgregarPregunta.AgregarPreguntaFragment"
+        android:label="fragment_agregar_pregunta"
+        tools:layout="@layout/fragment_agregar_pregunta" />
+    <fragment
+        android:id="@+id/finExamenFragment"
+        android:name="com.oscarrecinos.parcial2.UI.FinExamen.FinExamenFragment"
+        android:label="fragment_fin_examen"
+        tools:layout="@layout/fragment_fin_examen" />
+    <fragment
+        android:id="@+id/ingresarUsuarioFragment"
+        android:name="com.oscarrecinos.parcial2.UI.IngresarUsuario.IngresarUsuarioFragment"
+        android:label="fragment_ingresar_usuario"
+        tools:layout="@layout/fragment_ingresar_usuario" />
+    <fragment
+        android:id="@+id/tablaUsuariosFragment"
+        android:name="com.oscarrecinos.parcial2.UI.TablaUsuarios.TablaUsuariosFragment"
+        android:label="fragment_tabla_usuarios"
+        tools:layout="@layout/fragment_tabla_usuarios" />
+</navigation>

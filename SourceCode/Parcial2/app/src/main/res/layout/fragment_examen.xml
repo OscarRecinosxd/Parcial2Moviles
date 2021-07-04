@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.oscarrecinos.parcial2.data.ui.ExamenViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UI.Examen.ExamenFragment">
+
+
+        <TextView
+            android:id="@+id/TextoTemporizador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="24dp"
+            android:text="@={viewmodel.tiempo}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@={viewmodel.pregunta}"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/TextoTemporizador" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:text="@={viewmodel.puntosString}"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <RadioGroup
+            android:id="@+id/RadioGroupOpciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <RadioButton
+                android:id="@+id/RadioButtonOpcionA"
+                android:layout_width="wrap_content"
+                android:text="@={viewmodel.opcionA}"
+                android:checked="@={viewmodel.seleccionadaA}"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/RadioButtonOpcionB"
+                android:layout_width="wrap_content"
+                android:text="@={viewmodel.opcionB}"
+                android:layout_height="wrap_content"
+                android:checked="@={viewmodel.seleccionadaB}"
+
+                />
+
+            <RadioButton
+                android:id="@+id/RadioButtonOpcionC"
+                android:layout_width="wrap_content"
+                android:text="@={viewmodel.opcionC}"
+                android:layout_height="wrap_content"
+                android:checked="@={viewmodel.seleccionadaC}"
+
+                />
+
+            <RadioButton
+                android:id="@+id/RadioButtonOpcionD"
+                android:layout_width="wrap_content"
+                android:text="@={viewmodel.opcionD}"
+                android:layout_height="wrap_content"
+                android:checked="@={viewmodel.seleccionadaD}"
+
+                />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/SiguientePregunta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Siguiente"
+            android:onClick="@{()-> viewmodel.PoblarPregunta()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RadioGroupOpciones" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@={viewmodel.puntosAcumuladosString}"
+            android:textSize="20sp"
+            tools:text="Puntos prueba"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SiguientePregunta" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
